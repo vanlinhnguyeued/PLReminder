@@ -136,11 +136,6 @@ public class ReminderFragment extends AppDefaultFragment {
     }
 
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getActivity().getMenuInflater().inflate(R.menu.menu_reminder, menu);
-        return true;
-    }
-
     private void changeOccurred() {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences(MainFragment.SHARED_PREF_DATA_SET_CHANGED, MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -171,26 +166,7 @@ public class ReminderFragment extends AppDefaultFragment {
         }
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.toDoReminderDoneMenuItem:
-                Date date = addTimeToDate(valueFromSpinner());
-                mItem.setToDoDate(date);
-                mItem.setHasReminder(true);
-                Log.d("OskarSchindler", "Date Changed to: " + date);
-                changeOccurred();
-                saveData();
-                closeApp();
-                //foo
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-
-    private void saveData() {
+     private void saveData() {
         try {
             storeRetrieveData.saveToFile(mToDoItems);
         } catch (JSONException | IOException e) {

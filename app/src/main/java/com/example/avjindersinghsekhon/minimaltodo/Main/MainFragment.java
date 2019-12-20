@@ -29,14 +29,12 @@ import android.widget.TextView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 import com.amulyakhare.textdrawable.util.ColorGenerator;
-import com.example.avjindersinghsekhon.minimaltodo.About.AboutActivity;
 import com.example.avjindersinghsekhon.minimaltodo.AddToDo.AddToDoActivity;
 import com.example.avjindersinghsekhon.minimaltodo.AddToDo.AddToDoFragment;
 import com.example.avjindersinghsekhon.minimaltodo.Analytics.AnalyticsApplication;
 import com.example.avjindersinghsekhon.minimaltodo.AppDefault.AppDefaultFragment;
 import com.example.avjindersinghsekhon.minimaltodo.R;
 import com.example.avjindersinghsekhon.minimaltodo.Reminder.ReminderFragment;
-import com.example.avjindersinghsekhon.minimaltodo.Settings.SettingsActivity;
 import com.example.avjindersinghsekhon.minimaltodo.Utility.ItemTouchHelperClass;
 import com.example.avjindersinghsekhon.minimaltodo.Utility.RecyclerViewEmptySupport;
 import com.example.avjindersinghsekhon.minimaltodo.Utility.StoreRetrieveData;
@@ -316,45 +314,6 @@ public class MainFragment extends AppDefaultFragment {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString(THEME_SAVED, theme);
         editor.apply();
-    }
-
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getActivity().getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.aboutMeMenuItem:
-                Intent i = new Intent(getContext(), AboutActivity.class);
-                startActivity(i);
-                return true;
-//            case R.id.switch_themes:
-//                if(mTheme == R.style.CustomStyle_DarkTheme){
-//                    addThemeToSharedPreferences(LIGHTTHEME);
-//                }
-//                else{
-//                    addThemeToSharedPreferences(DARKTHEME);
-//                }
-//
-////                if(mTheme == R.style.CustomStyle_DarkTheme){
-////                    mTheme = R.style.CustomStyle_LightTheme;
-////                }
-////                else{
-////                    mTheme = R.style.CustomStyle_DarkTheme;
-////                }
-//                this.recreate();
-//                return true;
-            case R.id.preferences:
-                Intent intent = new Intent(getContext(), SettingsActivity.class);
-                startActivity(intent);
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 
     @Override
