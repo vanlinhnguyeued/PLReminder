@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Minimal</string>
+    <string name="app_name">PLReminder</string>
 
     <string name="action_settings">Ustawienia</string>
     <string name="no_to_dos">Nie masz nic do zrobienia</string>

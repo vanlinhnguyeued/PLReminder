@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Minimal</string>
+    <string name="app_name">PLReminder</string>
     <string name="action_settings">Impostazioni</string>
     <string name="no_to_dos">Non ci sono cosa da fare</string>
     <string name="title">Titolo</string>

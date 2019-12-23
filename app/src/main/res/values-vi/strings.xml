@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Minimal</string>
+    <string name="app_name">PLReminder</string>
     <string name="action_settings">Cài đặt</string>
     <string name="no_to_dos">Bạn không có bất kỳ công việc nào để thực hiện</string>
     <string name="title">Tiêu đề</string>

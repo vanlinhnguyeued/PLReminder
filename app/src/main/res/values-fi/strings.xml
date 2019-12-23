@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Minimal</string>
+    <string name="app_name">PLReminder</string>
     <string name="action_settings">Asetukset</string>
     <string name="no_to_dos">Ei tekemättömiä tehtäviä</string>
     <string name="title">Otsikko</string>

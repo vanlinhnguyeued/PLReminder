@@ -6,7 +6,7 @@
         preserved.  This file is offered as-is, without any warranty.
     -->
 	
-    <string name="app_name">Minimal</string>
+    <string name="app_name">PLReminder</string>
     <string name="action_settings">Paramètres</string>
     <string name="no_to_dos">Vous n\'avez aucun todo</string>
     <string name="title">Titre</string>

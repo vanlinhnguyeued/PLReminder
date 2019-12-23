@@ -4,6 +4,7 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -362,7 +363,6 @@ public class MainFragment extends AppDefaultFragment {
         AlarmManager am = getAlarmManager();
         PendingIntent pi = PendingIntent.getService(getContext(), requestCode, i, PendingIntent.FLAG_UPDATE_CURRENT);
         am.set(AlarmManager.RTC_WAKEUP, timeInMillis, pi);
-//        Log.d("OskarSchindler", "createAlarm "+requestCode+" time: "+timeInMillis+" PI "+pi.toString());
     }
 
     private void deleteAlarm(Intent i, int requestCode) {
@@ -384,8 +384,6 @@ public class MainFragment extends AppDefaultFragment {
     public void makeUpItems(ArrayList<ToDoItem> items, int len) {
         for (String testString : testStrings) {
             ToDoItem item = new ToDoItem(testString,testString, false, new Date());
-            //noinspection ResourceType
-//            item.setTodoColor(getResources().getString(R.color.red_secondary));
             items.add(item);
         }
 
@@ -458,10 +456,10 @@ public class MainFragment extends AppDefaultFragment {
             //color of title text in our to-do item. White for night mode, dark gray for day mode
             int todoTextColor;
             if (sharedPreferences.getString(THEME_SAVED, LIGHTTHEME).equals(LIGHTTHEME)) {
-                bgColor = Color.WHITE;
+                bgColor = R.drawable.bgra;
                 todoTextColor = getResources().getColor(R.color.secondary_text);
             } else {
-                bgColor = Color.DKGRAY;
+                bgColor = R.drawable.bgra;
                 todoTextColor = Color.WHITE;
             }
             holder.linearLayout.setBackgroundColor(bgColor);
@@ -476,16 +474,6 @@ public class MainFragment extends AppDefaultFragment {
             }
             holder.mToDoTextview.setText(item.getToDoText());
             holder.mToDoTextview.setTextColor(todoTextColor);
-//            holder.mColorTextView.setBackgroundColor(Color.parseColor(item.getTodoColor()));
-
-//            TextDrawable myDrawable = TextDrawable.builder().buildRoundRect(item.getToDoText().substring(0,1),Color.RED, 10);
-            //We check if holder.color is set or not
-//            if(item.getTodoColor() == null){
-//                ColorGenerator generator = ColorGenerator.MATERIAL;
-//                int color = generator.getRandomColor();
-//                item.setTodoColor(color+"");
-//            }
-//            Log.d("OskarSchindler", "Color: "+item.getTodoColor());
             TextDrawable myDrawable = TextDrawable.builder().beginConfig()
                     .textColor(Color.WHITE)
                     .useFont(Typeface.DEFAULT)
@@ -585,24 +573,6 @@ public class MainFragment extends AppDefaultFragment {
         super.onDestroy();
         mRecyclerView.removeOnScrollListener(customRecyclerScrollViewListener);
     }
-
-
-    //    public void setUpTransitions(){
-//        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
-//            Transition enterT = new Slide(Gravity.RIGHT);
-//            enterT.setDuration(500);
-//
-//            Transition exitT = new Slide(Gravity.LEFT);
-//            exitT.setDuration(300);
-//
-//            Fade fade = new Fade();
-//            fade.setDuration(500);
-//
-//            getWindow().setExitTransition(fade);
-//            getWindow().setReenterTransition(fade);
-//
-//        }
-//    }
     @Override
     protected int layoutRes() {
         return R.layout.fragment_main;

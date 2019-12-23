@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Minimal</string>
+    <string name="app_name">PLReminder</string>
     <string name="about">Отностно</string>
     <string name="action_settings">Настройки</string>
     <string name="app_version">Версия: %1$s</string>

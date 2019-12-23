@@ -64,7 +64,7 @@ public class ReminderFragment extends AppDefaultFragment {
         storeRetrieveData = new StoreRetrieveData(getContext(), MainFragment.FILENAME);
         mToDoItems = MainFragment.getLocallyStoredData(storeRetrieveData);
 
-        ((AppCompatActivity) getActivity()).setSupportActionBar((Toolbar) view.findViewById(R.id.toolbar));
+        //((AppCompatActivity) getActivity()).setSupportActionBar((Toolbar) view.findViewById(R.id.toolbar));
 
 
         Intent i = getActivity().getIntent();
